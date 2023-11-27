@@ -1,0 +1,32 @@
+2023-11-26 17:48:05,774 [INFO] root: Welcome to flight catalog. App requests to: http://localhost:8000
+2023-11-26 17:50:02,173 [INFO] root: Welcome to flight catalog. App requests to: http://localhost:8000
+2023-11-26 17:50:55,450 [INFO] root: Welcome to flight catalog. App requests to: http://localhost:8000
+2023-11-26 17:51:11,904 [INFO] root: Welcome to flight catalog. App requests to: http://localhost:8000
+2023-11-26 17:52:53,346 [INFO] root: Welcome to flight catalog. App requests to: http://localhost:8000
+2023-11-26 17:53:10,395 [INFO] root: Welcome to flight catalog. App requests to: http://localhost:8000
+2023-11-26 17:53:28,232 [INFO] root: Welcome to flight catalog. App requests to: http://localhost:8000
+2023-11-26 17:53:36,239 [INFO] root: Welcome to flight catalog. App requests to: http://localhost:8000
+2023-11-26 17:55:03,699 [INFO] root: Welcome to flight catalog. App requests to: http://localhost:8000
+2023-11-26 17:55:57,465 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): localhost:8000
+2023-11-26 17:55:57,467 [DEBUG] urllib3.connectionpool: http://localhost:8000 "GET /flight?option=Aeromexico%2FLAX&option_chosen=Aeromexico HTTP/1.1" 307 0
+2023-11-26 17:55:57,506 [DEBUG] urllib3.connectionpool: http://localhost:8000 "GET /flight/?option=Aeromexico%2FLAX&option_chosen=Aeromexico HTTP/1.1" 500 21
+2023-11-26 17:55:57,507 [ERROR] root: Error: 500
+2023-11-26 17:55:57,507 [ERROR] root: Internal Server Error
+2023-11-26 17:56:03,533 [INFO] root: Welcome to flight catalog. App requests to: http://localhost:8000
+2023-11-26 17:56:28,552 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): localhost:8000
+2023-11-26 17:56:28,581 [DEBUG] urllib3.connectionpool: http://localhost:8000 "GET /flight?option=Aeromexico&option_chosen=Aeromexico%2FJFK HTTP/1.1" 307 0
+2023-11-26 17:56:28,583 [DEBUG] urllib3.connectionpool: http://localhost:8000 "GET /flight/?option=Aeromexico&option_chosen=Aeromexico%2FJFK HTTP/1.1" 500 21
+2023-11-26 17:56:28,583 [ERROR] root: Error: 500
+2023-11-26 17:56:28,583 [ERROR] root: Internal Server Error
+2023-11-26 17:56:44,856 [INFO] root: Welcome to flight catalog. App requests to: http://localhost:8000
+2023-11-26 17:57:17,009 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): localhost:8000
+2023-11-26 17:57:17,067 [DEBUG] urllib3.connectionpool: http://localhost:8000 "GET /flight?option=airport&option_chosen=LAX HTTP/1.1" 307 0
+2023-11-26 17:57:17,101 [DEBUG] urllib3.connectionpool: http://localhost:8000 "GET /flight/?option=airport&option_chosen=LAX HTTP/1.1" 200 2417
+2023-11-26 17:58:13,483 [INFO] root: Welcome to flight catalog. App requests to: http://localhost:8000
+2023-11-26 17:58:36,328 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): localhost:8000
+2023-11-26 17:58:36,330 [DEBUG] urllib3.connectionpool: http://localhost:8000 "GET /flight?option=airline&option_chosen=Aeromexico HTTP/1.1" 307 0
+2023-11-26 17:58:36,337 [DEBUG] urllib3.connectionpool: http://localhost:8000 "GET /flight/?option=airline&option_chosen=Aeromexico HTTP/1.1" 200 6109
+2023-11-26 17:58:45,529 [INFO] root: Welcome to flight catalog. App requests to: http://localhost:8000
+2023-11-26 17:58:54,639 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): localhost:8000
+2023-11-26 17:58:54,640 [DEBUG] urllib3.connectionpool: http://localhost:8000 "GET /flight?option=airport&option_chosen=GDL HTTP/1.1" 307 0
+2023-11-26 17:58:54,646 [DEBUG] urllib3.connectionpool: http://localhost:8000 "GET /flight/?option=airport&option_chosen=GDL HTTP/1.1" 200 2537
