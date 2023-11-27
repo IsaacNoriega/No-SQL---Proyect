@@ -3,6 +3,7 @@ import argparse
 import logging
 import os
 import requests
+from collections import Counter
 
 # Configuración del logger
 log = logging.getLogger()
@@ -22,20 +23,34 @@ def print_flight_details(flights_data):
         print("=" * 50)
 
 def suggest_advertising_months(flights_data):
+    # Inicializa un diccionario para almacenar meses por aerolínea
     airline_months = {}
+
+    # Itera sobre los datos de vuelos
     for flight_info in flights_data:
         airline = flight_info.get("airline")
         month = flight_info.get("month")
 
         if airline and month:
+            # Si la aerolínea no está en el diccionario, agrégala con una lista vacía
             if airline not in airline_months:
-                airline_months[airline] = set()
+                airline_months[airline] = []
 
-            airline_months[airline].add(month)
+            # Agrega el mes a la lista de meses para esa aerolínea
+            airline_months[airline].append(month)
 
-    print("Suggested Advertising Months:")
+    # Encuentra el mes más común para cada aerolínea
+    most_common_months = {}
     for airline, months in airline_months.items():
-        print(f"For {airline}: {', '.join(months)}")
+        counter = Counter(months)
+        most_common_month, count = counter.most_common(1)[0]
+        most_common_months[airline] = {"month": most_common_month, "count": count}
+
+    # Encuentra la aerolínea con el mes más común
+    max_airline, max_month_info = max(most_common_months.items(), key=lambda x: x[1]["count"])
+
+    # Imprime el resultado
+    print(f"The most common advertising month is {max_month_info['month']} for {max_airline} with {max_month_info['count']} occurrences.")
 
 def search_flights():
     # Función para buscar y mostrar la lista de vuelos según la opción y elección del usuario

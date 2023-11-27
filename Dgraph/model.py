@@ -7,8 +7,8 @@ import datetime
 def set_schema(client):
     schema = """
         airline: string .
-        from: uid @reverse .
-        to: uid @reverse .
+        from: string .
+        to: string .
         day: int .
         month: int .
         year: int .
@@ -29,39 +29,16 @@ def set_schema(client):
 def create_data(client):
     with open('data/flight_passengers.json', 'r') as json_file:
         data = json.load(json_file)
-        mutation = pydgraph.Mutation(commit_now=True)
+        txn = client.txn()
+        try:
+            mutation = pydgraph.Mutation(commit_now=True)
+            response = txn.mutate(set_obj=data)
 
-        for record in data:
-            from_airport_code = record.get("from")
-            to_airport_code = record.get("to")
+            txn.mutate(mutation)
 
-            # Crear aeropuertos si no existen
-            mutation.set_json({
-                "uid": "_:from_airport",
-                "airport.code": from_airport_code,
-                "airport.name": "Unknown Airport",
-            })
-
-            mutation.set_json({
-                "uid": "_:to_airport",
-                "airport.code": to_airport_code,
-                "airport.name": "Unknown Airport",
-            })
-
-            # Crear el pasajero con referencias a los aeropuertos
-            mutation.set_json(record)
-            mutation.set_json({
-                "uid": "_:from_airport",
-                "from": {"uid": "_:from_airport"}
-            })
-            mutation.set_json({
-                "uid": "_:to_airport",
-                "to": {"uid": "_:to_airport"}
-            })
-
-        # Realizar la mutación
-        client.txn().mutate(mutation)
-        print("Data created for flight passengers.")
+            print(f"Data created for flight passengers.")
+        finally:
+            txn.discard()
 
 def visualize_data(client):
     query = """

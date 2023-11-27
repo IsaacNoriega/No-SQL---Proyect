@@ -30,3 +30,7 @@
 2023-11-26 17:58:54,639 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): localhost:8000
 2023-11-26 17:58:54,640 [DEBUG] urllib3.connectionpool: http://localhost:8000 "GET /flight?option=airport&option_chosen=GDL HTTP/1.1" 307 0
 2023-11-26 17:58:54,646 [DEBUG] urllib3.connectionpool: http://localhost:8000 "GET /flight/?option=airport&option_chosen=GDL HTTP/1.1" 200 2537
+2023-11-27 07:34:33,608 [INFO] root: Welcome to flight catalog. App requests to: http://localhost:8000
+2023-11-27 07:34:45,675 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): localhost:8000
+2023-11-27 07:34:45,681 [DEBUG] urllib3.connectionpool: http://localhost:8000 "GET /flight?option=airline&option_chosen=Volaris HTTP/1.1" 307 0
+2023-11-27 07:34:45,743 [DEBUG] urllib3.connectionpool: http://localhost:8000 "GET /flight/?option=airline&option_chosen=Volaris HTTP/1.1" 200 5461
